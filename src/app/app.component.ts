@@ -3,34 +3,41 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { Homepage } from "../pages/homepage/homepage";
+
 import { ListPage } from '../pages/list/list';
+import { MyTestPage } from '../pages/my-test-page/my-test-page';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Storage } from '@ionic/storage';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  //providers: [TrackService]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = HelloIonicPage;
+  rootPage = Homepage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    public storage: Storage
   ) {
     this.initializeApp();
 
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'My First List', component: ListPage },
+      { title: 'My Test Page', component: MyTestPage },
+      { title: 'Homepage', component: Homepage }
     ];
   }
 
@@ -48,5 +55,9 @@ export class MyApp {
     this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+  }
+  resetTutorial(){
+    this.storage.set('tutorial','false');
+    this.storage.set('tutorial1','false');
   }
 }

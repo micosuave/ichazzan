@@ -1,0 +1,10 @@
+{
+  "globalDependencies": {
+    "cordova-plugin-device": "registry:dt/cordova-plugin-device#0.0.0+20160919075538",
+    "cordova-plugin-file": "registry:dt/cordova-plugin-file#0.0.0+20160916224823",
+    "cordova-plugin-inappbrowser": "registry:dt/cordova-plugin-inappbrowser#0.0.0+20170120190647",
+    "cordova-plugin-media-capture": "registry:dt/cordova-plugin-media-capture#0.0.0+20160819210047",
+    "cordova-plugin-splashscreen": "registry:dt/cordova-plugin-splashscreen#0.0.0+20160819210047",
+    "cordova-plugin-statusbar": "registry:dt/cordova-plugin-statusbar#0.0.0+20160819210047"
+  }
+}

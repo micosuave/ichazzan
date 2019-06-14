@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button menuToggle *ngIf="!selectedItem" >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>
+     {{selectedItem.enTitle}} <span *ngIf="selectedItem.heTitle">-</span>
+      {{selectedItem.heTitle}}
+    </ion-title>
+
+  </ion-navbar>
+<!-- <button icon-only (click)="reset()">
+        <ion-icon name="help" ></ion-icon>
+      </button> -->
+
+
+</ion-header>
+
+<ion-content padding (swipeRight)="swipedRight()" (swipeLeft)="swipedLeft()" >
+
+  <!-- <h4 text-center *ngIf="selectedItem">
+    {{selectedItem.enTitle}} <span *ngIf="selectedItem.heTitle">-</span> {{selectedItem.heTitle}}
+  </h4> -->
+
+  <div *ngIf="selectedItem.words == null">
+<p *ngFor="let line of selectedItem['text-hebrew']" text-right dir="rtl" >{{line}}</p>
+</div>
+<read-along [audio]="selectedItem.audio" id="step8"></read-along>
+<div [ngSwitch]="language" id="step9">
+<p *ngSwitchCase="'Hebrew'"></p>
+<div *ngSwitchCase="'English'" >
+  <div *ngIf="selectedItem['text-english']">
+    <p *ngFor="let line of selectedItem['text-english']" text-left dir="ltr" class="translation">{{line}}</p>
+  </div>
+</div>
+</div>
+<!-- <singalong></singalong> -->
+<!-- <write-along></write-along> -->
+<!-- <popovercomp></popovercomp> -->
+</ion-content>
+<ion-footer>
+  <ion-toolbar mode="ios">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="togglePlay()" id="step6">
+        <ion-icon name="play" *ngIf="!is_playing"></ion-icon>
+        <ion-icon name="pause" *ngIf="is_playing"></ion-icon>
+        <!-- <ion-icon name="alert" *ngIf="selectedItem.audio !== audio.src"></ion-icon> -->
+      </button>
+    </ion-buttons>
+<ion-segment [(ngModel)]="language">
+      <ion-segment-button value="Hebrew" id="">
+        Hebrew
+      </ion-segment-button>
+      <ion-segment-button value="English" id="step7">
+        English
+      </ion-segment-button>
+    </ion-segment>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="presentPopover($event)" (dismissed)="onDismissed($event)" id="step10">
+        <ion-icon name="md-headset"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

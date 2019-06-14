@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+<ion-title text-center>
+{{selectedItem.enTitle}}
+<span *ngIf="selectedItem.heTitle">-</span>
+      {{selectedItem.heTitle}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list>
+  <button ion-item *ngFor="let item of selectedItem.nodes" (click)="itemTapped($event, item)" [style.color]="item.audiotracks && item.audiotracks[1] ? '#006600' : '#006699'" [disabled]="item.disabled" id="step4">
+    <ion-icon *ngIf="item.nodes" name="arrow-round-forward" item-left></ion-icon>
+    <ion-icon *ngIf="!item.nodes && !item.audiotracks" name="volume-off" item-left></ion-icon>
+    <ion-icon *ngIf="item.audiotracks && !item.audiotracks[0].words" name="arrow-dropright" item-left></ion-icon>
+    <ion-icon *ngIf="item.audiotracks && item.audiotracks[0].words" name="arrow-dropright-circle" item-left id="step1"></ion-icon>
+    <!-- <ion-badge item-left>{{item["text-hebrew"].length}}</ion-badge> -->
+    {{item.enTitle}}
+    <ion-icon *ngIf="item['text-english']" name="md-book" padding-left id="step3"></ion-icon>
+
+<p class="item-note" item-right dir="rtl" id="step2">
+      {{item["heTitle"]}}
+    </p>
+  </button>
+</ion-list>
+</ion-content>

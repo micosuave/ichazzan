@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<img padding="" src="./assets/imgs/ohev.png">
+<h6>About this App</h6>
+<p class="content">We are pleased to introduce iChazzan, Version 1.0!</p>
+
+<p class="content">iChazzan is designed to promote proficiency in leading the Jewish prayers throughout the world. A
+  tutorial for iChazzan can be found <a href="https://youtu.be/4JmdxmfVrvE" hrefs="https://youtu.be/4JmdxmfVrvE"
+    (click)="openLink($event.target.attributes[0].nodeValue)">here</a>.</p>
+
+<p class="content">Our goal is to ultimately provide a complete library of Jewish prayers, beginning with the Sabbath. This Version 1.0 contains cantillations for the main Sabbath prayers (using Nusach Ashkenaz) – including prayers for Friday night, Shacharit, Musaf, and Minchah. Friday night, Shacharit, and Musaf prayers are rendered by Dr. Josh Milner.  Dr. Milner has been inspiring us by leading prayers at Ohev Sholom - The National Synagogue for the past 15 years.   The Minchah prayer is rendered by Mr. Harris Cohen.  Mr. Cohen is an avid Ba’al T’filah in our Shul.</p>
+
+<p>We plan to update iChazzan regularly as we work toward our goal of producing a comprehensive resource library. The iChazzan app is designed to accommodate multiple renditions for each prayer (click on the "headphones" icon to see list of available tracks), allowing for the app to become a major repository for Jewish cantillations the world over.  We welcome your input and support for this endeavor.</p>
+
+<p>iChazzan was developed by Moshe Arie Michelsohn and Michael Malcolm Costa.</p>
+
+<p>Please email <a hrefs="mailto:info@ichazzan.org"
+    (click)="openMLink($event.target.attributes[0].nodeValue)">info@ichazzan.org</a> for inquiries and
+  feedback.</p>
+
+<p>Please consider making a donation to OSTNS in support of iChazzan; you can do so <a
+    hrefs="https://www.ostns.org/payment.php" (click)="openLink($event.target.attributes[0].nodeValue)">here</a>.</p>
+
+<p>With the blessing that you can learn to master the art of leading prayers,
+  <br>
+  <br>
+  Rabbi Shmuel Herzfeld
+  <br>
+<a href="mailto:RabbiShmuel@ostns.org"
+  (click)="openMLink($event.target.attributes[0].nodeValue)">RabbiShmuel@ostns.org</a>
+</p>
+<p><em>&copy; 5779 (2019) Rabbi Shmuel Herzfeld </em></p>
+
+<hr>
+
+<p>
+    <button color="primary" ion-button="" full (click)="openHome()">
+      Go Back
+    </button>
+  </p>
+</ion-content>
+
+
+

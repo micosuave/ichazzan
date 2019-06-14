@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+p.content , .introjs-tooltiptext{
+  font-family: sans-serif;
+}
+p.translation {
+  font-family: sans-serif;
+}
+p{
+-webkit-user-select: text;
+-moz-user-select: text;
+-ms-user-select: text;
+user-select: text;
+
+}
+ion-app, ion-nav, ion-tab, ion-tabs, .app-root, .ion-page{
+    &.introjs-fixParent{
+        contain: layout size style;
+    }
+    
+}

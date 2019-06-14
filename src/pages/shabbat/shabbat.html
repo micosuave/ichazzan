@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Shabbat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of sections" (click)="itemTapped($event, item)" [disabled]="item.nodes.length == 0">
+      <!-- <ion-badge item-left>{{item.nodes.length}}</ion-badge> -->
+      {{item.enTitle}}
+<p class="item-note" item-right dir="rtl">
+        {{item["heTitle"]}}
+      </p>
+    </button>
+  </ion-list>
+  <ion-list>
+    {{items}}
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      {{item | json}}
+    </button>
+  </ion-list>
+</ion-content>

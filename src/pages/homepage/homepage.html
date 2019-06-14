@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title text-center>iChazzan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- <h1 style="background-color:#006699;color:white;">Ohev Tfillah</h1> -->
+
+  <!-- <h3 style="background-color:#003366;color:white;">Ohev Shalom - The National Synagogue</h3> -->
+<ion-grid>
+<ion-row justify-content-center align-items-center>
+<!-- <ion-col col-1 style="border:1px solid black;">#<br>#<br>#</ion-col> -->
+    <ion-col col-auto >
+<img src="./assets/imgs/ohev.png" padding>
+    </ion-col>
+<!-- <ion-col col-1 style="border:1px solid black;"></ion-col> -->
+  </ion-row>
+  <!-- <ion-row justify-content-center align-items-center>
+  <ion-col col-auto>
+<img src="../../assets/imgs/HAL9000.png" width="100px" height="100px">
+  </ion-col>
+  </ion-row> -->
+</ion-grid>
+<p>
+  <button ion-button color="light" full (click)="openComingSoon()" disabled>Weekdays</button>
+</p>
+  <p>
+    <button ion-button color="primary" full (click)="openPage()">Shabbat</button>
+  </p>
+
+  <p>
+    <button ion-button color="light" full (click)="openComingSoon()" disabled>Festivals, Feasts, & Fasts</button>
+  </p>
+  <p>
+    <button ion-button color="light" full (click)="openComingSoon()" disabled>High Holidays</button>
+  </p>
+<p>
+  <button ion-button color="light" full (click)="openComingSoon()" disabled>Lifecycle Events</button>
+</p>
+  <p>
+    <button ion-button color="dark" full (click)="openAboutApp()">About this App</button>
+  </p>
+<p>
+  <button ion-button color="dark" full outline (click)="openAboutOhev()">About Ohev Sholom</button>
+</p>
+  <!-- <p>
+    <button ion-button color="dark" menuToggle full outline>Main Menu</button>
+  </p> -->
+
+</ion-content>

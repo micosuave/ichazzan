@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About Ohev</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img padding="" src="./assets/imgs/ohev.png">
+
+  <h4>About Ohev Sholom</h4>
+
+  <p>Ohev Sholom - The National Synagogue® (OSTNS) is a vibrant and open Orthodox Jewish community located in the
+    Shepherd Park neighborhood of Washington, DC. We are committed to upholding and practicing the tenets of halacha
+    while remaining open and welcoming to those who are in different places on their Jewish spiritual journey. We
+    invite you to experience our community to see what makes it so great by joining us for a class, daily minyan, a
+    Shabbat, or other activity, and we encourage you to reach out!</p>
+
+  <p>Our mission is to lead and serve the greater Jewish community by embracing the values of Torah, study, and prayer
+    while engaging with our neighbors. Please reach out to us at <a hrefs="https://www.ostns.org/"
+      (click)="openLink($event.target.attributes[0].nodeValue)">https://www.ostns.org</a>.</p>
+
+  <p>Please consider making a donation to OSTNS in support of iChazzan; you can do so <a
+      hrefs="https://www.ostns.org/payment.php" (click)="openLink($event.target.attributes[0].nodeValue)">here</a>.</p>
+
+  <p>
+    <button color="primary" ion-button="" full (click)="openHome()">
+      Go Back
+    </button>
+  </p>
+</ion-content>
